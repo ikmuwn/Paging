@@ -4,8 +4,8 @@
 - 다양한 방식의 페이지 처리방식 지원 (page 1씩 증가, next page hash string 처리, limit offset 20씩 증가 등)
 - 네트워크 연동시 중복 요청 방지
 - 간편한 초기화, 더 불러오기 기능 지원
-- [RecyclerViewViewModel#24](https://github.com/ikmuwn/Mock-android/blob/d17b4e1f44f7f2d1f97f20ef7d602e1df798b577/app/src/main/java/kim/uno/mock/ui/recyclerview/RecyclerViewViewModel.kt#L24) Paging 적용 모델
-- [PagingFragment#15](https://github.com/ikmuwn/Mock-android/blob/d17b4e1f44f7f2d1f97f20ef7d602e1df798b577/app/src/main/java/kim/uno/mock/ui/paging/PagingFragment.kt#L15) 더 불러오기 호출
+- [RecyclerViewViewModel#24](https://github.com/ikmuwn/Mock-android/blob/599b2181761df2ac88a91ecfc78162c73d5bf1d2/app/src/main/java/kim/uno/mock/ui/recyclerview/RecyclerViewViewModel.kt#L24) Paging 적용 모델
+- [PagingFragment#15](https://github.com/ikmuwn/Mock-android/blob/599b2181761df2ac88a91ecfc78162c73d5bf1d2/app/src/main/java/kim/uno/mock/ui/paging/PagingFragment.kt#L15) 더 불러오기 호출
 - [Mock-android](https://github.com/ikmuwn/Mock-android)
 
 ## Use
