@@ -6,7 +6,7 @@ class Paging<T>(
 ) {
 
     var next: T = first
-    var state = State.IDLE
+    var state = State.NONE
 
     val isProgress: Boolean
         get() = state == State.PROGRESS
@@ -14,7 +14,7 @@ class Paging<T>(
     val isEndOfList: Boolean
         get() = state == State.END_OF_LIST
 
-    var isFirstLoad = false
+    var isFirstLoad = true
 
     fun refresh() {
         if (isProgress) {
@@ -26,7 +26,7 @@ class Paging<T>(
     }
 
     fun reset() {
-        state = State.IDLE
+        state = State.NONE
         next = first
         isFirstLoad = true
     }
@@ -36,12 +36,15 @@ class Paging<T>(
             return
         }
 
+        if (state != State.NONE) {
+            isFirstLoad = false
+        }
+
         state = State.PROGRESS
         request(next)
     }
 
     fun success(next: T, endOfList: Boolean = false) {
-        isFirstLoad = false
         this.next = next
         state = if (endOfList) {
             State.END_OF_LIST
@@ -55,7 +58,7 @@ class Paging<T>(
     }
 
     enum class State {
-        IDLE, PROGRESS, END_OF_LIST, ERROR
+        NONE, IDLE, PROGRESS, END_OF_LIST, ERROR
     }
 
 }
